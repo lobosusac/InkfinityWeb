@@ -16,7 +16,10 @@ export function ProductCard({ product }: { product: Product }) {
     : null;
 
   return (
-    <article className="group flex flex-col border border-line bg-surface transition-colors hover:border-bone/30">
+    <article
+      data-category={product.category}
+      className="group flex flex-col border border-line bg-surface transition-colors hover:border-bone/30"
+    >
       <div className="relative aspect-[4/5] overflow-hidden bg-raised">
         <JerseyArt
           art={product.art}

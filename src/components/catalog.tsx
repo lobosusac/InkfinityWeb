@@ -35,6 +35,7 @@ export function Catalog() {
               <button
                 key={c.slug}
                 type="button"
+                data-category={c.slug}
                 onClick={() => setActive(c.slug)}
                 aria-pressed={active === c.slug}
                 className={`border px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors ${
