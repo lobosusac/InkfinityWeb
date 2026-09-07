@@ -19,15 +19,16 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Playeras deportivas`,
+    default: `${site.name} — Camisetas, playeras y hoodies`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
   keywords: [
     "playeras deportivas",
-    "camisetas deportivas",
-    "uniformes deportivos",
-    "jerseys personalizados",
+    "camisetas de gimnasio",
+    "hoodies deportivos",
+    "ropa de entrenamiento",
+    "uniformes para gimnasio",
     site.location.country,
   ],
   openGraph: {
@@ -35,12 +36,12 @@ export const metadata: Metadata = {
     locale: site.locale.replace("-", "_"),
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — Playeras deportivas`,
+    title: `${site.name} — Camisetas, playeras y hoodies`,
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Playeras deportivas`,
+    title: `${site.name} — Camisetas, playeras y hoodies`,
     description: site.description,
   },
   robots: { index: true, follow: true },

@@ -40,8 +40,8 @@ export function Catalog() {
                 aria-pressed={active === c.slug}
                 className={`border px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors ${
                   active === c.slug
-                    ? "border-bone bg-bone text-black"
-                    : "border-line text-muted hover:border-bone/50 hover:text-bone"
+                    ? "border-volt bg-volt text-action-ink"
+                    : "border-line text-muted hover:border-ice/60 hover:text-bone"
                 }`}
               >
                 {c.label}

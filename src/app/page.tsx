@@ -1,6 +1,7 @@
 import { site } from "@/config/site";
 import { faqs } from "@/components/faq";
 import { BrandmarkDefs } from "@/components/brandmark";
+import { GymBackdrop } from "@/components/gym-backdrop";
 import { SiteHeader } from "@/components/site-header";
 import { Hero } from "@/components/hero";
 import { Marquee } from "@/components/marquee";
@@ -59,6 +60,7 @@ export default function Home() {
   return (
     <>
       <BrandmarkDefs />
+      <GymBackdrop />
       <SiteHeader />
       <main id="contenido" className="flex-1">
         <Hero />

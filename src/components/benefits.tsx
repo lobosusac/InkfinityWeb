@@ -3,11 +3,11 @@ import { Container, SectionHeading } from "@/components/ui";
 const benefits = [
   {
     title: "Tela que respira",
-    body: "Micro poliéster de secado rápido: saca el sudor a la superficie y se seca mientras entrenás, en vez de quedarse pesada y pegada al cuerpo.",
+    body: "Micro poliéster de secado rápido en camisetas y playeras: saca el sudor a la superficie y se seca mientras entrenás, en vez de quedarse pesada y pegada al cuerpo.",
   },
   {
     title: "Corte atlético real",
-    body: "Patronaje pensado para moverse. Hombro libre, largo que no se sube en el arranque y caída que no estorba en la carrera.",
+    body: "Patronaje pensado para moverse. Sisa amplia que deja el hombro libre, largo que no se sube en el arranque y caída que no estorba entre series.",
   },
   {
     title: "Estampado sublimado",
@@ -15,7 +15,7 @@ const benefits = [
   },
   {
     title: "Costuras planas",
-    body: "Sin roce en axilas ni costados. La diferencia se nota justo cuando la sesión se alarga y todo lo demás empieza a molestar.",
+    body: "Sin roce en axilas ni costados, y felpa perchada de 320 g en los hoodies. La diferencia se nota cuando la sesión se alarga y todo lo demás empieza a molestar.",
   },
 ];
 
@@ -32,13 +32,13 @@ export function Benefits() {
               está en la tela
             </>
           }
-          intro="Una playera deportiva barata se delata a los veinte minutos. Estas son las cuatro cosas en las que no cedemos."
+          intro="Una prenda de entrenamiento barata se delata a los veinte minutos. Estas son las cuatro cosas en las que no cedemos."
         />
 
         <div className="mt-14 grid gap-px border border-line bg-line sm:grid-cols-2">
           {benefits.map((b, i) => (
-            <article key={b.title} className="bg-black p-8 sm:p-10">
-              <span className="display text-sm text-dim">
+            <article key={b.title} className="bg-black/85 p-8 backdrop-blur sm:p-10">
+              <span className="display text-sm text-volt">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="display mt-3 text-2xl">{b.title}</h3>

@@ -1,8 +1,9 @@
 # Inkfinity Sportwear — página de ventas
 
-Landing de ventas con catálogo para playeras deportivas. Los pedidos se cierran
-por WhatsApp: cada botón abre un mensaje ya redactado con el modelo y la talla
-que el visitante eligió, para que solo tenga que pulsar enviar.
+Landing de ventas con catálogo para la ropa de entrenamiento de Inkfinity:
+camisetas, playeras y hoodies. Los pedidos se cierran por WhatsApp: cada botón
+abre un mensaje ya redactado con el modelo y la talla que el visitante eligió,
+para que solo tenga que pulsar enviar.
 
 Construido con Next.js 16 (App Router), React 19, TypeScript y Tailwind CSS 4.
 La página se genera de forma estática, así que se puede publicar en cualquier
@@ -31,7 +32,7 @@ Todo el contenido variable vive en dos archivos. Busca `PENDIENTE` y `TODO(clien
 | Archivo | Qué contiene |
 | --- | --- |
 | `src/config/site.ts` | Nombre, dominio, **número de WhatsApp**, correo, ubicación, horario, redes, moneda y envíos |
-| `src/data/products.ts` | Modelos del catálogo: nombre, categoría, precio, tela, tallas y colores |
+| `src/data/products.ts` | Modelos del catálogo: nombre, categoría, precio, tela, tallas y colores. La categoría (camisetas, playeras, hoodies) decide además qué silueta se dibuja |
 
 Ya confirmado: el negocio opera en Guatemala, los precios van en quetzales y
 los pedidos entran al WhatsApp +502 5969 5599.
@@ -49,13 +50,21 @@ Pendientes conocidos:
 
 ## Decisiones de diseño
 
-- **Marca monocromática**, tomada del logotipo: negro profundo, blanco hueso y
-  grises. El único color saturado de todo el sitio es el verde de WhatsApp, y
-  está reservado exclusivamente a los botones de pedido, de modo que el color
-  señala siempre la misma acción.
-- **Sin fotografía inventada.** Mientras no haya catálogo fotográfico, cada
-  modelo se dibuja con una ilustración vectorial (`src/components/jersey-art.tsx`)
-  que comunica el producto sin fingir ser una foto.
+- **Gimnasio de noche.** El fondo es un negro azulado, no un gris neutro: el
+  azul lo emparenta con la luz fría de un gimnasio a oscuras. El ambiente se
+  construye por capas en `src/components/gym-backdrop.tsx` —dos focos de neón en
+  esquinas opuestas, la rejilla del piso en perspectiva, viñeteado y grano— en
+  lugar de con una fotografía de fondo, que competiría con el texto y pesaría.
+- **Cada color significa una sola cosa.** Amarillo voltio: la acción, todo lo que
+  lleva a pedir por WhatsApp. Azul hielo: el acento frío, destellos y datos
+  secundarios. Cromado: los titulares, con el brillo de una barra olímpica.
+- **La identidad sale del material del cliente**, no de suposiciones: el eslogan,
+  el nombre de la línea, la tipografía de pincel y la foto de portada se
+  extrajeron del cartel que entregó. Ver `public/brand/LEEME.md`.
+- **Sin fotografía de producto inventada.** Mientras no haya catálogo
+  fotográfico, cada prenda se dibuja con una silueta vectorial propia según su
+  categoría (`src/components/garment-art.tsx`), de modo que la diferencia entre
+  una camiseta sin mangas, una playera y un hoodie se lee de un vistazo.
 - **Toda la paleta y la tipografía** se definen como variables en
   `src/app/globals.css`. Recolorear el sitio es cambiar ese bloque.
 

@@ -7,13 +7,16 @@
 export const site = {
   /** PENDIENTE: nombre comercial definitivo de la línea deportiva. */
   name: "Inkfinity",
-  /** Se muestra junto al nombre en el encabezado. */
-  tagline: "Sportwear",
+  /** Eslogan de la marca, tomado del cartel de la línea Culture Fit. */
+  tagline: "Break your limits",
+
+  /** Nombre de la línea de producto. */
+  line: "Culture Fit",
   /** PENDIENTE: dominio final, usado para SEO y datos estructurados. */
   url: "https://example.com",
 
   description:
-    "Playeras deportivas de alto rendimiento: tela transpirable, corte atlético y sublimación que no se despinta. Pedidos por WhatsApp.",
+    "Camisetas, playeras y hoodies de entrenamiento. Tela transpirable, corte atlético y estampado que aguanta. Pedidos por WhatsApp.",
 
   /** Número de WhatsApp en formato internacional, solo dígitos: 502 + 8 dígitos. */
   whatsapp: "50259695599",

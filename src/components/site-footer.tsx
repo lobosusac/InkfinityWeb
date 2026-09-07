@@ -25,7 +25,7 @@ export function SiteFooter() {
       <Container>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <Wordmark name={site.name} tagline={site.tagline} />
+            <Wordmark tagline={site.tagline} />
             <p className="mt-4 max-w-sm leading-relaxed text-muted">
               {site.description}
             </p>

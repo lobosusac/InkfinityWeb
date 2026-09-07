@@ -27,8 +27,8 @@ export function Process() {
 
         <ol className="mt-14 grid gap-5 md:grid-cols-3">
           {steps.map((s, i) => (
-            <li key={s.title} className="shard border border-line bg-surface p-8">
-              <span className="display block text-5xl text-bone/15">
+            <li key={s.title} className="shard border border-line bg-surface/80 p-8 backdrop-blur transition-colors hover:border-ice/50">
+              <span className="display block text-5xl text-volt/25">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="display mt-4 text-2xl">{s.title}</h3>

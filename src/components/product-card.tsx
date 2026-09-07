@@ -5,7 +5,7 @@ import type { Product } from "@/data/products";
 import { site } from "@/config/site";
 import { formatPrice } from "@/lib/format";
 import { waProduct } from "@/lib/whatsapp";
-import { JerseyArt } from "@/components/jersey-art";
+import { GarmentArt } from "@/components/garment-art";
 import { WhatsAppIcon } from "@/components/ui";
 
 export function ProductCard({ product }: { product: Product }) {
@@ -18,10 +18,11 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article
       data-category={product.category}
-      className="group flex flex-col border border-line bg-surface transition-colors hover:border-bone/30"
+      className="group flex flex-col border border-line bg-surface/80 backdrop-blur transition-colors hover:border-ice/50"
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-raised">
-        <JerseyArt
+        <GarmentArt
+          garment={product.category}
           art={product.art}
           className="h-full w-full p-8 transition-transform duration-500 group-hover:scale-[1.04]"
         />
@@ -64,8 +65,8 @@ export function ProductCard({ product }: { product: Product }) {
                 aria-pressed={size === s}
                 className={`min-w-11 border px-2.5 py-2 text-xs font-semibold transition-colors ${
                   size === s
-                    ? "border-bone bg-bone text-black"
-                    : "border-line text-muted hover:border-bone/50 hover:text-bone"
+                    ? "border-volt bg-volt text-action-ink"
+                    : "border-line text-muted hover:border-ice/60 hover:text-bone"
                 }`}
               >
                 {s}

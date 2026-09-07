@@ -27,7 +27,7 @@ export function SizeGuide() {
               talla correcta
             </>
           }
-          intro="Medidas de la prenda en centímetros, no del cuerpo. Si estás entre dos tallas y querés holgura para entrenar, subí una."
+          intro="Medidas de camisetas y playeras en centímetros, tomadas sobre la prenda y no sobre el cuerpo. Los hoodies calzan una talla más holgados. Si estás entre dos tallas y querés holgura, subí una."
         />
 
         <div className="overflow-x-auto border border-line">
@@ -36,7 +36,7 @@ export function SizeGuide() {
               Medidas de la prenda por talla, en centímetros
             </caption>
             <thead>
-              <tr className="bg-surface text-left">
+              <tr className="bg-raised text-left">
                 {["Talla", "Pecho (cm)", "Largo (cm)", "Hombro (cm)"].map((h) => (
                   <th
                     key={h}
@@ -51,7 +51,7 @@ export function SizeGuide() {
             <tbody>
               {rows.map((r) => (
                 <tr key={r.size} className="border-b border-line/60 last:border-0">
-                  <th scope="row" className="display px-4 py-3.5 text-left text-lg">
+                  <th scope="row" className="display px-4 py-3.5 text-left text-lg text-volt">
                     {r.size}
                   </th>
                   <td className="px-4 py-3.5 text-muted">{r.chest}</td>

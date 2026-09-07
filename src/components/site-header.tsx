@@ -19,10 +19,10 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-black/85 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-line bg-black/80 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="text-bone" onClick={() => setOpen(false)}>
-          <Wordmark name={site.name} tagline={site.tagline} />
+          <Wordmark tagline={site.tagline} />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Principal">
@@ -30,7 +30,7 @@ export function SiteHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-muted transition-colors hover:text-bone"
+              className="text-sm text-muted transition-colors hover:text-volt"
             >
               {item.label}
             </a>

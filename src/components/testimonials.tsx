@@ -34,7 +34,7 @@ export function Testimonials() {
 
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {quotes.map((q) => (
-            <figure key={q.quote} className="flex flex-col border border-line bg-surface p-8">
+            <figure key={q.quote} className="flex flex-col border border-line bg-surface/80 p-8 backdrop-blur">
               <blockquote className="flex-1 text-lg leading-relaxed">
                 “{q.quote}”
               </blockquote>

@@ -7,7 +7,8 @@ const base =
 const variants = {
   action: "bg-action text-action-ink hover:bg-action-strong",
   bone: "bg-bone text-black hover:bg-white",
-  ghost: "border border-line text-bone hover:border-bone hover:bg-raised",
+  ice: "bg-ice text-action-ink hover:bg-ice-strong",
+  ghost: "border border-line text-bone hover:border-ice hover:bg-raised",
 } as const;
 
 const sizes = {
@@ -61,9 +62,16 @@ export function SectionHeading({
   return (
     <header className={align === "center" ? "text-center" : ""}>
       {eyebrow ? (
-        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-dim">{eyebrow}</p>
+        <p
+          className={`mb-4 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-ice ${
+            align === "center" ? "justify-center" : ""
+          }`}
+        >
+          <span aria-hidden="true" className="neon-hielo h-px w-8 bg-ice" />
+          {eyebrow}
+        </p>
       ) : null}
-      <h2 className="display text-4xl sm:text-5xl">{title}</h2>
+      <h2 className="display text-4xl text-bone sm:text-5xl">{title}</h2>
       {intro ? (
         <p
           className={`mt-4 max-w-2xl text-base leading-relaxed text-muted ${

@@ -19,8 +19,8 @@ export const faqs = [
     a: "No. Es sublimación: la tinta se integra a la fibra en vez de quedar pegada encima, así que no se cuartea ni se desprende. Lavar del revés y con agua fría alarga aún más la vida de la prenda.",
   },
   {
-    q: "¿Hacen uniformes personalizados?",
-    a: "Sí, desde 10 piezas, con escudo, nombres y números. Te enviamos una muestra digital para aprobación antes de producir.",
+    q: "¿Hacen prendas personalizadas para gimnasios?",
+    a: "Sí, desde 10 piezas, con tu logotipo y los nombres de cada quien. Trabajamos con gimnasios, boxes y equipos. Te enviamos una muestra digital para aprobación antes de producir.",
   },
   {
     q: "¿Qué formas de pago aceptan?",
@@ -50,7 +50,7 @@ export function Faq() {
                 {f.q}
                 <span
                   aria-hidden="true"
-                  className="shrink-0 text-xl text-dim transition-transform group-open:rotate-45"
+                  className="shrink-0 text-xl text-volt transition-transform group-open:rotate-45"
                 >
                   +
                 </span>

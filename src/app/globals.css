@@ -1,36 +1,51 @@
 @import "tailwindcss";
 
 /*
- * Sistema de diseño — derivado del logotipo (infinito tribal, blanco sobre negro).
- * Marca monocromática. El único color saturado del sitio es el verde de WhatsApp,
- * reservado exclusivamente para la acción de pedido.
- * Para recolorear todo el sitio, cambia solo estas variables.
+ * Sistema de diseño — gimnasio de noche.
+ *
+ * El fondo es un negro azulado, no un gris neutro: el azul lo emparenta con la
+ * luz fría de un gimnasio a oscuras. Sobre él, dos neones —amarillo voltio y
+ * azul hielo— y el cromado de los discos de pesas.
+ *
+ * Reparto de color, para que cada tono signifique una sola cosa:
+ *   voltio  → la acción: todo lo que lleva a pedir por WhatsApp.
+ *   hielo   → el acento frío: destellos, bordes vivos, datos secundarios.
+ *   cromo   → los titulares, con el brillo metálico de una barra olímpica.
+ *
+ * Para recolorear el sitio entero basta con cambiar este bloque.
  */
 :root {
-  --ink-black: #08080a;
-  --ink-surface: #101013;
-  --ink-raised: #17171b;
-  --ink-line: #26262c;
-  --ink-white: #f6f6f4;
-  --ink-muted: #8f8f98;
-  --ink-dim: #5c5c66;
+  --noche: #07090f;
+  --piso: #0c1017;
+  --panel: #131a26;
+  --linea: #222c42;
+  --hueso: #edf1f7;
+  --tenue: #8c97ae;
+  --apagado: #5a6479;
 
-  --action: #25d366;
-  --action-strong: #1eb855;
-  --action-ink: #05130a;
+  --voltio: #e8ff2e;
+  --voltio-fuerte: #d4ec18;
+  --voltio-tinta: #0a0c05;
+
+  --hielo: #2fd2ff;
+  --hielo-fuerte: #12b9e8;
 }
 
 @theme inline {
-  --color-black: var(--ink-black);
-  --color-surface: var(--ink-surface);
-  --color-raised: var(--ink-raised);
-  --color-line: var(--ink-line);
-  --color-bone: var(--ink-white);
-  --color-muted: var(--ink-muted);
-  --color-dim: var(--ink-dim);
-  --color-action: var(--action);
-  --color-action-strong: var(--action-strong);
-  --color-action-ink: var(--action-ink);
+  --color-black: var(--noche);
+  --color-surface: var(--piso);
+  --color-raised: var(--panel);
+  --color-line: var(--linea);
+  --color-bone: var(--hueso);
+  --color-muted: var(--tenue);
+  --color-dim: var(--apagado);
+
+  --color-action: var(--voltio);
+  --color-action-strong: var(--voltio-fuerte);
+  --color-action-ink: var(--voltio-tinta);
+  --color-volt: var(--voltio);
+  --color-ice: var(--hielo);
+  --color-ice-strong: var(--hielo-fuerte);
 
   --font-display: var(--font-anton);
   --font-sans: var(--font-inter);
@@ -42,20 +57,9 @@ html {
 }
 
 body {
-  background-color: var(--ink-black);
-  color: var(--ink-white);
+  background-color: var(--noche);
+  color: var(--hueso);
   -webkit-font-smoothing: antialiased;
-}
-
-/* Textura sutil de grano, evocando el fondo del logotipo. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.045;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .display {
@@ -65,9 +69,51 @@ body::before {
   line-height: 0.92;
 }
 
+/* Titular cromado: el degradado imita el reflejo de una barra de acero. */
+.cromo {
+  background-image: linear-gradient(
+    175deg,
+    #ffffff 0%,
+    #c9d4e4 26%,
+    #78849b 47%,
+    #eaf1fb 62%,
+    #9aa7bd 82%,
+    #dfe7f3 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Resplandor de tubo de neón, en las dos temperaturas de la paleta. */
+.neon-voltio {
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--voltio) 55%, transparent),
+    0 0 42px color-mix(in srgb, var(--voltio) 28%, transparent);
+}
+.neon-hielo {
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--hielo) 55%, transparent),
+    0 0 42px color-mix(in srgb, var(--hielo) 28%, transparent);
+}
+.texto-neon-hielo {
+  text-shadow: 0 0 18px color-mix(in srgb, var(--hielo) 60%, transparent);
+}
+
 /* Filo diagonal, haciendo eco de las puntas del logotipo. */
 .shard {
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+}
+
+/* Rejilla del piso en perspectiva, como las losetas de caucho vistas de pie. */
+.piso-rejilla {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--hielo) 22%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--hielo) 14%, transparent) 1px, transparent 1px);
+  background-size: 72px 72px;
+  transform: perspective(340px) rotateX(64deg);
+  transform-origin: bottom center;
+  mask-image: linear-gradient(to top, #000 0%, transparent 78%);
 }
 
 @media (prefers-reduced-motion: reduce) {
