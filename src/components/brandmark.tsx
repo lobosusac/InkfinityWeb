@@ -1,9 +1,12 @@
 /**
- * Marca gráfica — PLACEHOLDER.
+ * Marca gráfica — reconstrucción vectorial del logotipo.
  *
- * TODO(cliente): sustituir por el logotipo real. Lo ideal es el SVG original;
- * si solo hay PNG, que venga con fondo transparente y al menos 1000 px de ancho.
- * Al usar `currentColor`, la marca se adapta sola al color del texto que la contiene.
+ * Trazada a mano a partir de la captura que envió el cliente: infinito tribal
+ * de trazo cónico, atravesado por una hoja vertical con barbas superiores.
+ * Al usar `currentColor`, la marca se adapta al color del texto que la contiene.
+ *
+ * TODO(cliente): si aparece el archivo original (SVG o PNG a alta resolución),
+ * conviene sustituir estos trazos por la geometría exacta.
  */
 export function Brandmark({ className = "" }: { className?: string }) {
   return (
@@ -12,19 +15,25 @@ export function Brandmark({ className = "" }: { className?: string }) {
       role="img"
       aria-label="Logotipo"
       className={className}
-      fill="none"
+      fill="currentColor"
     >
-      {/* Lanza vertical */}
+      {/* Hoja vertical: punta superior, barbas y punta inferior. */}
       <path
-        d="M100 14 L110 62 L100 78 L90 62 Z M100 186 L110 138 L100 122 L90 138 Z"
-        fill="currentColor"
+        d="M100 8 106 46 111 62 100 82 89 62 94 46Z
+           M100 192 106 158 111 142 100 122 89 142 94 158Z"
       />
-      {/* Infinito */}
       <path
-        d="M52 100 C52 66 88 66 100 100 C112 134 148 134 148 100 C148 66 112 66 100 100 C88 134 52 134 52 100 Z"
-        stroke="currentColor"
-        strokeWidth="9"
-        strokeLinecap="round"
+        d="M78 30C82 46 86 56 94 66 88 62 80 56 74 46 71 40 69 34 78 30Z
+           M122 30C118 46 114 56 106 66 112 62 120 56 126 46 129 40 131 34 122 30Z"
+      />
+
+      {/* Infinito de trazo cónico: contorno exterior menos el interior. */}
+      <path
+        fillRule="evenodd"
+        d="M100 100C76 60 26 64 30 100 34 136 76 140 100 100Z
+           M100 100C80 74 44 76 47 100 50 124 80 126 100 100Z
+           M100 100C124 60 174 64 170 100 166 136 124 140 100 100Z
+           M100 100C120 74 156 76 153 100 150 124 120 126 100 100Z"
       />
     </svg>
   );

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    locale: "es_CR",
+    locale: site.locale.replace("-", "_"),
     url: site.url,
     siteName: site.name,
     title: `${site.name} — Playeras deportivas`,

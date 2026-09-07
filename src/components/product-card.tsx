@@ -72,7 +72,7 @@ export function ProductCard({ product }: { product: Product }) {
         </fieldset>
 
         <a
-          href={waProduct({ product: `${product.name} (talla ${size})` })}
+          href={waProduct({ product: product.name, size })}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-6 inline-flex items-center justify-center gap-2 bg-action px-5 py-3.5 text-sm font-semibold uppercase tracking-wide text-action-ink transition-colors hover:bg-action-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bone"

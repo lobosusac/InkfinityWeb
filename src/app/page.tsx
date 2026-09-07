@@ -33,7 +33,7 @@ function StructuredData() {
         addressRegion: site.location.region,
         addressCountry: site.location.countryCode,
       },
-      openingHours: site.hours,
+      openingHours: site.hoursSchema,
     },
     {
       "@context": "https://schema.org",

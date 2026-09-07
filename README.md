@@ -33,15 +33,19 @@ Todo el contenido variable vive en dos archivos. Busca `PENDIENTE` y `TODO(clien
 | `src/config/site.ts` | Nombre, dominio, **número de WhatsApp**, correo, ubicación, horario, redes, moneda y envíos |
 | `src/data/products.ts` | Modelos del catálogo: nombre, categoría, precio, tela, tallas y colores |
 
+Ya confirmado: el negocio opera en Guatemala, los precios van en quetzales y
+los pedidos entran al WhatsApp +502 5969 5599.
+
 Pendientes conocidos:
 
-- [ ] **Número de WhatsApp real** en `src/config/site.ts` (formato internacional, solo dígitos). Sin esto, ningún botón de pedido funciona.
-- [ ] Nombre comercial definitivo de la línea deportiva.
+- [ ] **Modelos, precios y fotografía reales.** Los seis modelos del catálogo son de ejemplo.
+- [ ] Dirección y horario reales, más el correo de contacto.
 - [ ] Dominio final, para el SEO y los datos estructurados.
-- [ ] Modelos, precios y fotografía reales.
 - [ ] Medidas reales en la guía de tallas (`src/components/size-guide.tsx`).
 - [ ] Reseñas reales, o quitar la sección de testimonios (`src/components/testimonials.tsx`). Los testimonios inventados hacen más daño que no tener ninguno.
-- [ ] Logotipo definitivo: reemplazar el marcador de posición en `src/components/brandmark.tsx` y el icono en `src/app/icon.svg`.
+- [ ] Logotipo original. `src/components/brandmark.tsx` y `src/app/icon.svg` llevan
+      una reconstrucción vectorial trazada a partir de una captura; conviene
+      sustituirla por la geometría exacta en cuanto aparezca el archivo.
 
 ## Decisiones de diseño
 

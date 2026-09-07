@@ -15,25 +15,32 @@ export const site = {
   description:
     "Playeras deportivas de alto rendimiento: tela transpirable, corte atlético y sublimación que no se despinta. Pedidos por WhatsApp.",
 
-  /**
-   * PENDIENTE: número de WhatsApp en formato internacional, solo dígitos.
-   * Ejemplo Costa Rica: 506 + 8 dígitos.
-   */
-  whatsapp: "50600000000",
+  /** Número de WhatsApp en formato internacional, solo dígitos: 502 + 8 dígitos. */
+  whatsapp: "50259695599",
 
   /** PENDIENTE: correo de contacto. */
   email: "hola@example.com",
 
-  /** PENDIENTE: ciudad y país, usados en el pie de página y el SEO local. */
+  /** PENDIENTE: confirmar ciudad y departamento. Se usan en el pie y el SEO local. */
   location: {
-    city: "San José",
-    region: "San José",
-    country: "Costa Rica",
-    countryCode: "CR",
+    city: "Ciudad de Guatemala",
+    region: "Guatemala",
+    country: "Guatemala",
+    countryCode: "GT",
   },
+
+  /** Idioma y región, para el formato de números y los metadatos sociales. */
+  locale: "es-GT",
 
   /** PENDIENTE: horario real de atención. */
   hours: "Lunes a sábado, 9:00 a 18:00",
+
+  /**
+   * El mismo horario en el formato que exige schema.org, para que Google lo
+   * entienda. Debe mantenerse en sincronía con `hours`.
+   * Días: Mo Tu We Th Fr Sa Su.
+   */
+  hoursSchema: "Mo-Sa 09:00-18:00",
 
   /** PENDIENTE: usuarios reales. Deja la cadena vacía para ocultar el enlace. */
   social: {
@@ -42,12 +49,10 @@ export const site = {
     facebook: "",
   },
 
-  /** Moneda mostrada en el catálogo. PENDIENTE: confirmar país. */
+  /** Moneda mostrada en el catálogo. */
   currency: {
-    symbol: "₡",
-    code: "CRC",
-    /** Separador de miles para el formato local. */
-    locale: "es-CR",
+    symbol: "Q",
+    code: "GTQ",
   },
 
   /** Envíos: se muestra en el aviso bajo el precio. */
