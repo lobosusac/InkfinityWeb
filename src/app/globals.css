@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/*
+ * Sistema de diseño — derivado del logotipo (infinito tribal, blanco sobre negro).
+ * Marca monocromática. El único color saturado del sitio es el verde de WhatsApp,
+ * reservado exclusivamente para la acción de pedido.
+ * Para recolorear todo el sitio, cambia solo estas variables.
+ */
+:root {
+  --ink-black: #08080a;
+  --ink-surface: #101013;
+  --ink-raised: #17171b;
+  --ink-line: #26262c;
+  --ink-white: #f6f6f4;
+  --ink-muted: #8f8f98;
+  --ink-dim: #5c5c66;
+
+  --action: #25d366;
+  --action-strong: #1eb855;
+  --action-ink: #05130a;
+}
+
+@theme inline {
+  --color-black: var(--ink-black);
+  --color-surface: var(--ink-surface);
+  --color-raised: var(--ink-raised);
+  --color-line: var(--ink-line);
+  --color-bone: var(--ink-white);
+  --color-muted: var(--ink-muted);
+  --color-dim: var(--ink-dim);
+  --color-action: var(--action);
+  --color-action-strong: var(--action-strong);
+  --color-action-ink: var(--action-ink);
+
+  --font-display: var(--font-anton);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--ink-black);
+  color: var(--ink-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Textura sutil de grano, evocando el fondo del logotipo. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.display {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.92;
+}
+
+/* Filo diagonal, haciendo eco de las puntas del logotipo. */
+.shard {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
