@@ -43,9 +43,9 @@ Pendientes conocidos:
 - [ ] Dominio final, para el SEO y los datos estructurados.
 - [ ] Medidas reales en la guía de tallas (`src/components/size-guide.tsx`).
 - [ ] Reseñas reales, o quitar la sección de testimonios (`src/components/testimonials.tsx`). Los testimonios inventados hacen más daño que no tener ninguno.
-- [ ] Logotipo original. `src/components/brandmark.tsx` y `src/app/icon.svg` llevan
-      una reconstrucción vectorial trazada a partir de una captura; conviene
-      sustituirla por la geometría exacta en cuanto aparezca el archivo.
+- [ ] Logotipo original. La marca actual está vectorizada a partir de una captura
+      de 323 px (ver `public/brand/LEEME.md`); un SVG de diseñador daría filos
+      más limpios.
 
 ## Decisiones de diseño
 

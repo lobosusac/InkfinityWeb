@@ -1,4 +1,5 @@
 import type { Product } from "@/data/products";
+import { BRANDMARK_ID } from "@/components/brandmark";
 
 /**
  * Ilustración vectorial de la playera.
@@ -38,20 +39,16 @@ export function JerseyArt({
         fill="none"
         opacity="0.35"
       />
-      {/* Marca al centro del pecho */}
-      <g transform="translate(150 150) scale(0.34) translate(-100 -100)">
-        <path
-          d="M100 14 L110 62 L100 78 L90 62 Z M100 186 L110 138 L100 122 L90 138 Z"
-          fill={art.accent}
-        />
-        <path
-          d="M52 100 C52 66 88 66 100 100 C112 134 148 134 148 100 C148 66 112 66 100 100 C88 134 52 134 52 100 Z"
-          stroke={art.accent}
-          strokeWidth="9"
-          fill="none"
-          strokeLinecap="round"
-        />
-      </g>
+      {/* Marca al centro del pecho: referencia al símbolo, sin duplicar el trazado */}
+      <use
+        href={`#${BRANDMARK_ID}`}
+        x="112"
+        y="112"
+        width="76"
+        height="76"
+        style={{ color: art.accent }}
+      />
+
       {/* Costura inferior */}
       <path d="M80 310 L220 310" stroke={art.accent} strokeWidth="2" opacity="0.25" />
     </svg>
